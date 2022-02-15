@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "makeup_brands",
+  "info": {
+    "singularName": "makeup-brand",
+    "pluralName": "makeup-brands",
+    "displayName": "makeup-brand",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "makeup_brands"
+    }
+  }
+}
